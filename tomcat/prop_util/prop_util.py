@@ -23,9 +23,9 @@ if __name__ == '__main__':
         print "Changing key %s from %s to %s" % (key, value, new_value)
         p[key] = new_value
     #Set DB values based on docker-provided environment variables
-    p['VitroConnection.DataSource.url'] = "jdbc:mysql://db/%s" % os.getenv('DB_ENV_MYSQL_DATABASE')
-    p['VitroConnection.DataSource.username'] = os.getenv('DB_ENV_MYSQL_USER')
-    p['VitroConnection.DataSource.password'] = os.getenv('DB_ENV_MYSQL_PASSWORD')
+    p['VitroConnection.DataSource.url'] = "http://db:8111/v1/graphs/sparql"
+    p['VitroConnection.DataSource.username'] = 'admin'
+    p['VitroConnection.DataSource.password'] = 'admin'
     print "****Properties after****"
     p.list()
     p.store(open(runtime_filepath,'w'))
