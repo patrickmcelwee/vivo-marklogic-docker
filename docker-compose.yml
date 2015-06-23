@@ -1,0 +1,27 @@
+vivodb:
+  build: db
+  # restart: always
+  ports:
+    - "7997:7997"
+    - "7999:7999"
+    - "8000:8000"
+    - "8001:8001"
+    - "8002:8002"
+    - "8111:8111"
+    - "9060:9060"
+    - "9061:9061"
+    - "9062:9062"
+    - "9063:9063"
+    - "9064:9064"
+# vivotomcat:
+#   build: tomcat
+#   volumes:
+#     - /usr/local/Cellar/tomcat/8.0.21/libexec/webapps:/usr/local/tomcat/webapps:rw
+#     - /usr/local/vivo/home:/usr/local/vivo/home:rw
+#   ports:
+#     - "8080:8080"
+#   links:
+#     - vivodb:db
+#   environment:
+#     - CATALINA_OPTS=-Xmx2048m -XX:MaxPermSize=128m
+#   restart: always
